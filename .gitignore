@@ -1,6 +1,2 @@
-.DS_Store
-pkg
-test/unit/tmp/*
-doc
-tmp
-*.pdoc.yaml
+.settings
+.project
