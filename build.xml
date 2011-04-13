@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Google App Script - Prototype" default="Minify" basedir=".">
+	<property name="dist.dir" value="dist"/>
+	<target name="Minify" depends="Build">
+		<java jar="yui\yuicompressor.jar" fork="true">
+			<arg value="-o"/>
+			<arg value="${dist.dir}\minified.js"/>
+			<arg value="${dist.dir}\build.js"/>
+		</java>
+	</target>
+	<target name="Build">
+		<concat destfile="${dist.dir}\build.js" fixlastline="true" append="false">
+			<filelist dir="src/prototype" files="prototype.js" />
+			<filelist dir="src/prototype/lang" files="class.js,object.js,function.js,date.js,regexp.js,string.js,template.js,enumerable.js,array.js,hash.js,number.js,range.js" />
+		</concat>
+	</target>
+</project>

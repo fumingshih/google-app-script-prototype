@@ -34,10 +34,7 @@
       STRING_CLASS = '[object String]',
       ARRAY_CLASS = '[object Array]',
       DATE_CLASS = '[object Date]',
-      NATIVE_JSON_STRINGIFY_SUPPORT = window.JSON &&
-        typeof JSON.stringify === 'function' &&
-        JSON.stringify(0) === '0' &&
-        typeof JSON.stringify(Prototype.K) === 'undefined';
+      NATIVE_JSON_STRINGIFY_SUPPORT = true; //Set this to false to get this library's JSON stringify support instead of Google App Script native one
         
   function Type(o) {
     switch(o) {
@@ -567,7 +564,7 @@
   extend(Object, {
     extend:        extend,
     inspect:       inspect,
-    toJSON:        NATIVE_JSON_STRINGIFY_SUPPORT ? stringify : toJSON,
+    toJSON:        NATIVE_JSON_STRINGIFY_SUPPORT ? Utilities.jsonStringify : toJSON,
     toQueryString: toQueryString,
     toHTML:        toHTML,
     keys:          Object.keys || keys,

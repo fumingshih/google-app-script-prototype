@@ -29,9 +29,8 @@ Object.extend(String, {
 });
 
 Object.extend(String.prototype, (function() {
-  var NATIVE_JSON_PARSE_SUPPORT = window.JSON &&
-    typeof JSON.parse === 'function' &&
-    JSON.parse('{"test": true}').test;
+  //Set this to false to get this library's JSON parse support instead of Google App Script native one
+  var NATIVE_JSON_PARSE_SUPPORT = true;
 
   function prepareReplacement(replacement) {
     if (Object.isFunction(replacement)) return replacement;
@@ -877,7 +876,7 @@ Object.extend(String.prototype, (function() {
     inspect:        inspect,
     unfilterJSON:   unfilterJSON,
     isJSON:         isJSON,
-    evalJSON:       NATIVE_JSON_PARSE_SUPPORT ? parseJSON : evalJSON,
+    evalJSON:       NATIVE_JSON_PARSE_SUPPORT ? Utilities.jsonParse : evalJSON,
     include:        include,
     startsWith:     startsWith,
     endsWith:       endsWith,
