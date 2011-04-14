@@ -6,5 +6,5 @@ All DOM related functionalities have been removed as well for Google App Script 
 A standard and a minified build have been provided for convenience in the dist directory, as well as the YUI compressor used to build the compressed version of this library.
 Please find the build.xml ant file in this project root: it may be used to generate both distribution files.
 
-Many thanks to Sam Stephenson, who built one of the first cross browser ECMAScript library.  It's quite a feat to design and implement such a fundamental library that
-its use would spread across so many platforms, even in Google's cloud, 6 years after it was first released.
+Many thanks to Sam Stephenson, who built one of the first cross browser ECMAScript library.  It's quite a feat to design and implement such a fundamental library and in
+such a way that it would prove useful across so many platforms, even in Google's cloud, 6 years after it was first released.
